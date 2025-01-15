@@ -14,6 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 import os
+import dj_database_url
 
 load_dotenv()
 
@@ -104,6 +105,7 @@ DATABASES = {
 }
 """
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -114,7 +116,13 @@ DATABASES = {
         'PORT': os.getenv("DB_PORT"),
     }
 }
+"""
 
+DATABASES = {
+     'default': dj_database_url.config(
+         default=os.getenv('DB_URL')
+     )
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
