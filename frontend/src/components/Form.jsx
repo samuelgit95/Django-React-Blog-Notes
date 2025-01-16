@@ -33,6 +33,10 @@ function Form({ route, method }) {
         }
     };
 
+    const handleRegisterRedirect = () => {
+        navigate("/register");
+    };
+
     return (
         <form onSubmit={handleSubmit} className="form-container">
             <h1>{name}</h1>
@@ -54,6 +58,15 @@ function Form({ route, method }) {
             <button className="form-button" type="submit">
                 {name}
             </button>
+            {method === "login" && (
+                <button
+                    type="button"
+                    className="form-button register-button"
+                    onClick={handleRegisterRedirect}
+                >
+                    Don't have an account? Register here
+                </button>
+            )}
         </form>
     );
 }
