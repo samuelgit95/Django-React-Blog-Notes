@@ -3,14 +3,23 @@ div {
     font-family: Arial, sans-serif;
 }
 
+.home-container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
 /* Styles for the notes section */
 .notes-section {
     margin-bottom: 2rem;
+    padding: 10px;
 }
 
 .notes-section h2 {
     color: #333;
     font-size: 24px;
+    margin-bottom: 16px;
 }
 
 /* Styles for individual notes - assuming your Note component has some container element */

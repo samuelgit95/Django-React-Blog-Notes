@@ -40,6 +40,8 @@ function Home() {
             .then((res) => {
                 if (res.status === 201) alert("Note created");
                 else alert("Error creating note");
+                setTitle("");
+                setContent("");
                 getNotes();
             })
             .catch((err) => alert(err));
@@ -50,11 +52,11 @@ function Home() {
     };
 
     return (
-        <div>
+        <div className="home-container">
             <button className="logout-button" onClick={handleLogout}>
                 Logout
             </button>
-            <div>
+            <div className="notes-section">
                 <h2>Notes</h2>
                 {notes.map((note) => (
                     <Note note={note} onDelete={deleteNote} key={note.id} />
